@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>API - SelectionController</title>
+  <title>Changelog - SelectionController</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "API";
-    var mkdocs_page_input_path = "api.md";
+    var mkdocs_page_name = "Changelog";
+    var mkdocs_page_input_path = "changelog.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -53,29 +53,20 @@
     <a class="" href="..">About</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/">API</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="./">API</a>
+    <a class="current" href="./">Changelog</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#constructor">Constructor</a></li>
-    
-
-    <li class="toctree-l2"><a href="#functions">Functions</a></li>
-    
-
-    <li class="toctree-l2"><a href="#events">Events</a></li>
-    
-
-    <li class="toctree-l2"><a href="#example">Example</a></li>
+    <li class="toctree-l2"><a href="#8142019-v1-initial-launch">8/14/2019 // v1 // Initial Launch</a></li>
     
 
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../changelog/">Changelog</a>
 	    </li>
           
         </ul>
@@ -100,7 +91,7 @@
     
       
     
-    <li>API</li>
+    <li>Changelog</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -110,76 +101,12 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="constructor">Constructor</h3>
-<table>
-<thead>
-<tr>
-<th>Return</th>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SelectionController</td>
-<td><code>new(TextBox textBox)</code></td>
-<td>Create a new SelectionController object wrapped around the provided TextBox.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="functions">Functions</h3>
-<table>
-<thead>
-<tr>
-<th>Return</th>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td><code>GetSelection()</code></td>
-<td>Get the currently selected text. Will return an empty string if there is no selection or if the TextBox no longer exists.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="events">Events</h3>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Event</td>
-<td><code>SelectionChanged(string selection)</code></td>
-<td>Fires every time the selected text changes.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="example">Example</h3>
-<p>This example assumes that the SelectionController module is located in ReplicatedStorage and the script is inside of the TextBox.</p>
-<pre><code class="lua">local SelectionController=require(game.ReplicatedStorage.SelectionController) --get the module
-local textBox=script.Parent --get the TextBox
-local controller=SelectionController.new(textBox) --create a new controller around the TextBox
-
-print(controller:GetSelection()) --print the current selection (which will be a blank string,
-                                        --since there won't be a selection when the game starts)
-
-function selectionChanged(to) --print anything passed to the function
-    print(to)
-end
-
-controller.SelectionChanged:Connect(selectionChanged) --connect the selectionChanged function
-                                                                                --to the event
-
-</code></pre>
-
-<p><a href="../dev-api/">Secret developer documentation...</a></p>
+                <h2 id="8142019-v1-initial-launch">8/14/2019 // v1 // Initial Launch</h2>
+<ul>
+<li>Fixed a bug where getting the selection would include an extra character at the end.</li>
+<li>That fix also accidentally fixed a Roblox bug where SelectionStart would jump to the cursor position and then back when repositioning the cursor, double-firing the SelectionChanged event.</li>
+<li>Finished documentation.</li>
+</ul>
               
             </div>
           </div>
@@ -187,10 +114,8 @@ controller.SelectionChanged:Connect(selectionChanged) --connect the selectionCha
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../changelog/" class="btn btn-neutral float-right" title="Changelog">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href=".." class="btn btn-neutral" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../api/" class="btn btn-neutral" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -216,10 +141,8 @@ controller.SelectionChanged:Connect(selectionChanged) --connect the selectionCha
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../changelog/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
