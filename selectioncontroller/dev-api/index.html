@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Dev api - SelectionController</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Dev api";
+    var mkdocs_page_input_path = "dev-api.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SelectionController</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">About</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../api/">API</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SelectionController</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Dev api</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Wait, how'd you get in here? Whatever, just don't make a mess.</p>
+<hr />
+<h1 id="selectioncontroller">SelectionController</h1>
+<p>The main module, obviously. Holds most of the main stuff.</p>
+<ul>
+<li>The <code>SelectionChanged</code> event isn't added to the <code>self</code> table until the metatable has been assigned, since the event constructor requires the controller to access the TextBox and use the <code>GetSelection()</code> function.</li>
+<li><code>GetSelection()</code> is the meat of the program, and actually relatively small compared to all the rest of the logic. As long as the start and the end of the selection (defined by SelectionStart and CursorPosition) aren't negative (an indicator that there's no current selection), the numbers will be sorted into ascending order (which <code>string.sub</code> requires) with 1 being subtracted from the larger number (again, compensation for <code>string.sub</code>). If all is well, the shortened string is returned.</li>
+</ul>
+<h3 id="constructor">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SelectionController</td>
+<td><code>new(TextBox textBox)</code></td>
+<td>Create a new SelectionController object wrapped around the provided TextBox.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TextBox</td>
+<td><code>_textBox</code></td>
+<td>The textbox wrapped by the SelectionController.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="functions">Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><code>GetSelection()</code></td>
+<td>Get the currently selected text. Will return an empty string if there is no selection or if the TextBox no longer exists.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event</td>
+<td><code>SelectionChanged(string selection)</code></td>
+<td>Fires every time the selected text changes.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="selectionchanged">SelectionChanged</h1>
+<p>The table containing all of the event functionality. The biggest nest of code in the system, honestly.</p>
+<ul>
+<li>The constructor will automatically begin detecting changes and attempting to fire the newly created event. This is primarily done when <code>Text</code>, <code>CursorPosition</code>, or <code>SelectionStart</code> are changed.</li>
+<li>The <code>Fire()</code> function requires that the provided selection is different from the previous selection, in order to prevent accidental spamming of the event. If so, it will loop through the <code>_functions</code> table and call all of the functions in sequence. It would probably be a good idea to wrap the functions up in a pcall or spawn method to prevent erroring or yeilding functions from breaking the entire script.</li>
+</ul>
+<h3 id="constructor_1">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event</td>
+<td><code>new(SelectionController controller)</code></td>
+<td>Create a new SelectionChanged event and begin listening for changes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_1">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dictionary</td>
+<td><code>_functions</code></td>
+<td>A list of functions attached to the event.</td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>_lastResult</code></td>
+<td>The most recent result from <code>GetSelection()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="functions_1">Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td><code>Fire(string selection)</code></td>
+<td>Fire the event if the provided selection was different from the previous selection (_lastResult).</td>
+</tr>
+<tr>
+<td>EventConnection</td>
+<td><code>Connect(function function)</code></td>
+<td>Add the given function to a list of functions to be called when the event is fired.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="eventconnection">EventConnection</h1>
+<p>Designed to help <code>SelectionChanged</code> act like an actual event, <code>EventConnection</code> allows new connections to be disconnected if needed.</p>
+<ul>
+<li>The <code>Disconnect()</code> function works by locating the <code>_functions</code> table in <code>_event</code> and removing any function with the corresponding function ID.</li>
+</ul>
+<h3 id="constructor_2">Constructor</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EventConnection</td>
+<td><code>new(SelectionChanged event, string funcID)</code></td>
+<td>Create a new EventConnection for the given SelectionChanged event with the given function ID.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="properties_2">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SelectionChanged</td>
+<td><code>_event</code></td>
+<td>The event the connection is connected to.</td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>_funcID</code></td>
+<td>The ID of the function connected to the event.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="functions_2">Functions</h3>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td><code>Disconnect()</code></td>
+<td>Disconnect the connected function from the event.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
