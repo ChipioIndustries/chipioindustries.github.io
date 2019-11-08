@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>GetProductInfo - Framework Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "GetProductInfo";
+    var mkdocs_page_input_path = "api\\getProductInfo.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Framework Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../errors/">Errors</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../event/">Event</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../eventConnection/">EventConnection</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../find/">Find</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../formatImageAddress/">FormatImageAddress</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gamepass/">Gamepass</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../getClosest/">GetClosest</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">GetProductInfo</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#example">Example</a></li>
+    
+
+    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
+    
+
+    <li class="toctree-l3"><a href="#returns">Returns</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../instance/">Instance</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../leakyBucket/">LeakyBucket</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../prettyNumber/">PrettyNumber</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../products/">Products</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../promotedAccounts/">PromotedAccounts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../remote/">Remote</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../require/">Require</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../round/">Round</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../search/">Search</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../waitForPath/">WaitForPath</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../changelog/">Changelog</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Framework Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>GetProductInfo</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><code>GetProductInfo</code> wraps <a href="https://developer.roblox.com/en-us/api-reference/function/MarketplaceService/GetProductInfo" title="GPI Info"><code>MarketplaceService.GetProductInfo</code></a> in a cache to prevent using too many requests. If a player is passed when getting a gamepass's information, whether or not the player owns the gamepass will be included in the dictionary as well.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lua">local passID=1234
+local player=game.Players.LocalPlayer
+local info=GetProductInfo(passID,Enum.InfoType.GamePass,player)
+print(info.Name,info.IsOwned) --prints the name of the game pass and whether or not the player owns it
+</code></pre>
+
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number</td>
+<td>assetID</td>
+<td>The ID of the asset to get the information of.</td>
+</tr>
+<tr>
+<td>InfoType</td>
+<td>infoType</td>
+<td>The type of asset to get the info of.</td>
+</tr>
+<tr>
+<td>Player</td>
+<td>[player]</td>
+<td>The player to check ownership info of.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="returns">Returns</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>Name</td>
+<td>The name shown on the asset's page</td>
+</tr>
+<tr>
+<td>string</td>
+<td>Description</td>
+<td>The description as shown on the asset's page; can be nil if blank</td>
+</tr>
+<tr>
+<td>number</td>
+<td>PriceInRobux</td>
+<td>The cost of purchasing the asset using Robux</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Created</td>
+<td>Timestamp of when the asset was created, e.g. 2018-08-01T17:55:11.98Z</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Updated</td>
+<td>Timestamp of when the asset was last updated by its creator, e.g. 2018-08-01T17:55:11.98Z</td>
+</tr>
+<tr>
+<td>number</td>
+<td>ContentRatingTypeId</td>
+<td>Indicates whether the item is marked as 13+ in catalog</td>
+</tr>
+<tr>
+<td>number</td>
+<td>MinimumMembershipLevel</td>
+<td>The minimum subscription level necessary to purchase the item</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsPublicDomain</td>
+<td>Describes whether the asset can be taken for free</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Creator</td>
+<td>Creator</td>
+<td>A table of information describing the creator of the asset (see following lines)</td>
+</tr>
+<tr>
+<td>string</td>
+<td>Creator.CreatorType</td>
+<td>Either User or Group</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Creator.CreatorTargetId</td>
+<td>The ID of the creator user or group</td>
+</tr>
+<tr>
+<td>string</td>
+<td>Creator.Name</td>
+<td>The name/username of the creator</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Creator.Id</td>
+<td>(Use CreatorTargetId instead)</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>number</td>
+<td>AssetId</td>
+<td>If InfoType was Asset, this is the ID of the given asset.</td>
+</tr>
+<tr>
+<td>number</td>
+<td>AssetTypeId</td>
+<td>The <a href="https://developer.roblox.com/en-us/api-reference/enum/AssetType">type of asset</a> (e.g. place, model, shirt)*</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsForSale</td>
+<td>Describes whether the asset is purchasable</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsLimited</td>
+<td>Describes whether the asset is a "limited item" that is no longer (if ever) sold</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsLimitedUnique</td>
+<td>Describes whether the asset is a "limited unique" ("Limited U") item that only has a fixed number sold</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsNew</td>
+<td>Describes whether the asset is marked as "new" in the catalog</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Remaining</td>
+<td>The remaining number of items a limited unique item may be sold</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Sales</td>
+<td>The number of items the asset has been sold</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>number</td>
+<td>ProductId</td>
+<td>If the InfoType was Product, this is the product ID</td>
+</tr>
+<tr>
+<td>number</td>
+<td>IconImageAssetId</td>
+<td>For developer products and gamepasses, this is the asset ID of the product's icon (or 0 if the product does not have one)</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>IsOwned</td>
+<td>Whether or not the specified player (if any) owns the item if it's a gamepass.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../instance/" class="btn btn-neutral float-right" title="Instance">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../getClosest/" class="btn btn-neutral" title="GetClosest"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../getClosest/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../instance/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
