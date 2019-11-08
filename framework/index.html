@@ -73,6 +73,10 @@
     <ul class="subnav">
                 <li class="">
                     
+    <a class="" href="api/enum/">Enum</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="api/errors/">Errors</a>
                 </li>
                 <li class="">
@@ -191,6 +195,7 @@
                 <h1 id="framework-documentation">Framework Documentation</h1>
 <p>This (unnamed) framework is a long list of powerful functions and modules, designed in a very easily accessible way--loading all of the functions is as easy as calling <code>shared()</code>. You can get the files from the uncopylocked game <a href="https://www.roblox.com/games/4272066002/Framework" title="Framework Source">here</a>.</p>
 <h2 id="installation">Installation</h2>
+<p>If you're using the uncopylocked game as a source, simply copy the contents of <code>game.ReplicatedStorage</code>, <code>game.ServerScriptService</code>, and <code>game.StarterPlayer.StarterPlayerScripts</code> into their respective locations in the place file you'll be using. If you're using scripts from another source, continue reading!</p>
 <p>To begin, copy the "Modules" folder and <code>SharedModuleManager</code> into <code>game.ReplicatedStorage</code>. This will allow the server and the client to access the framework.</p>
 <h2 id="activation">Activation</h2>
 <p>In order to make the modules easily accessible, they should be embedded into the environment of every script. The cleanest way to do this is to use a script that attaches itself as a metatable to <code>shared</code>, a global that's accessible from all scripts, and then requires every module, adding the results to the script's environment. From there, all a script needs to do to set up the modules is call <code>shared()</code>. This is what the <code>SharedModuleManager</code> module does.</p>
@@ -203,7 +208,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api/errors/" class="btn btn-neutral float-right" title="Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="api/enum/" class="btn btn-neutral float-right" title="Enum">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -231,7 +236,7 @@
       
       
       
-        <span style="margin-left: 15px"><a href="api/errors/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="api/enum/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -244,5 +249,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-08 19:02:55
+Build Date UTC : 2019-11-08 21:41:59
 -->
