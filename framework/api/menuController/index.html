@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Event - Framework Docs</title>
+  <title>MenuController - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Event";
-    var mkdocs_page_input_path = "api\\event.md";
+    var mkdocs_page_name = "MenuController";
+    var mkdocs_page_input_path = "api\\menuController.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -73,18 +73,9 @@
                     
     <a class="" href="../errors/">Errors</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Event</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#constructor">Constructor</a></li>
-    
-
-    <li class="toctree-l3"><a href="#functions">Functions</a></li>
-    
-
-    </ul>
+    <a class="" href="../event/">Event</a>
                 </li>
                 <li class="">
                     
@@ -122,9 +113,21 @@
                     
     <a class="" href="../menu/">Menu</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../menuController/">MenuController</a>
+    <a class="current" href="./">MenuController</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#constructor">Constructor</a></li>
+    
+
+    <li class="toctree-l3"><a href="#properties">Properties</a></li>
+    
+
+    <li class="toctree-l3"><a href="#functions">Functions</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -201,7 +204,7 @@
         
       
     
-    <li>Event</li>
+    <li>MenuController</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -211,7 +214,7 @@
           <div role="main">
             <div class="section">
               
-                <p>An <code>Event</code> is an object used to allow scripts to detect specific changes (or, for lack of a better word, events) between each other.</p>
+                <p>A <code>MenuController</code> is a class for managing a set of <a href="../menu/"><code>Menu</code></a>s, only allowing one to be visible at a time.</p>
 <h2 id="constructor">Constructor</h2>
 <table>
 <thead>
@@ -223,9 +226,26 @@
 </thead>
 <tbody>
 <tr>
-<td>Event</td>
-<td>Event.new()</td>
-<td>Creates a new event object.</td>
+<td>MenuController</td>
+<td>MenuController.new(dictionary menus)</td>
+<td>Creates a new MenuController object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>Exists</td>
+<td>Whether or not the MenuController still exists.</td>
 </tr>
 </tbody>
 </table>
@@ -241,18 +261,28 @@
 <tbody>
 <tr>
 <td>void</td>
-<td>Fire(...)</td>
-<td>Fires the event, passing through all of the arguments.</td>
-</tr>
-<tr>
-<td>EventConnection</td>
-<td>Connect(function functionToFire)</td>
-<td>Creates a connection between the given function and the event.</td>
+<td>AddMenu(GuiObject/LayerCollector menu,string title)</td>
+<td>Registers a new menu to be activated with the provided title.</td>
 </tr>
 <tr>
 <td>void</td>
-<td>Wait()</td>
-<td>Yields until the event is fired. Does not return any arguments.</td>
+<td>ClearMenu()</td>
+<td>Clears the current menu if there is one.</td>
+</tr>
+<tr>
+<td>void</td>
+<td>SetMenu(string title,...)</td>
+<td>Set the currently enabled menu to whichever one matched the specified title.</td>
+</tr>
+<tr>
+<td>void</td>
+<td>GetMenu()</td>
+<td>Get the currently enabled Menu object.</td>
+</tr>
+<tr>
+<td>void</td>
+<td>Destroy()</td>
+<td>Destroys the MenuController.</td>
 </tr>
 </tbody>
 </table>
@@ -263,10 +293,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../eventConnection/" class="btn btn-neutral float-right" title="EventConnection">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../prettyNumber/" class="btn btn-neutral float-right" title="PrettyNumber">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../errors/" class="btn btn-neutral" title="Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../menu/" class="btn btn-neutral" title="Menu"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -292,10 +322,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../errors/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../menu/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../eventConnection/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../prettyNumber/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Event - Framework Docs</title>
+  <title>DataRenderer - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Event";
-    var mkdocs_page_input_path = "api\\event.md";
+    var mkdocs_page_name = "DataRenderer";
+    var mkdocs_page_input_path = "api\\dataRenderer.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -57,9 +57,18 @@
 		
     <span class="caption-text">API</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../dataRenderer/">DataRenderer</a>
+    <a class="current" href="./">DataRenderer</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#example">Example</a></li>
+    
+
+    <li class="toctree-l3"><a href="#functions">Functions</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -73,18 +82,9 @@
                     
     <a class="" href="../errors/">Errors</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Event</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#constructor">Constructor</a></li>
-    
-
-    <li class="toctree-l3"><a href="#functions">Functions</a></li>
-    
-
-    </ul>
+    <a class="" href="../event/">Event</a>
                 </li>
                 <li class="">
                     
@@ -201,7 +201,7 @@
         
       
     
-    <li>Event</li>
+    <li>DataRenderer</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -211,24 +211,55 @@
           <div role="main">
             <div class="section">
               
-                <p>An <code>Event</code> is an object used to allow scripts to detect specific changes (or, for lack of a better word, events) between each other.</p>
-<h2 id="constructor">Constructor</h2>
+                <p><code>DataRenderer</code> is a set of intelligent functions that convert a dictionary to a tree of <code>ValueObject</code> instances and back again. This is incredibly useful for player data management.</p>
 <table>
 <thead>
 <tr>
-<th>Return</th>
-<th>Function</th>
-<th>Description</th>
+<th>Compatible Data Types</th>
+<th>ClassName</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Event</td>
-<td>Event.new()</td>
-<td>Creates a new event object.</td>
+<td>boolean</td>
+<td><code>BoolValue</code></td>
+</tr>
+<tr>
+<td>dictionary</td>
+<td><code>Folder</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>IntValue</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>StringValue</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="example">Example</h2>
+<pre><code class="lua">--when loading
+local data={
+    Coins=5;
+    RPName=&quot;ack&quot;;
+    Inventory={
+        Backpack=false;
+        Sword=true;
+        Pet=false;
+    };
+}
+local playerDataFolder=Instance.new({ClassName=&quot;Folder&quot;;Name=&quot;PlayerData&quot;;Parent=player})
+DataRenderer.ToInstance(playerDataFolder,data)
+--when saving
+local playerDataFolder=player:FindFirstChild(&quot;PlayerData&quot;)
+if playerDataFolder then
+    local data=DataRenderer.ToDictionary(playerDataFolder)
+    --do stuff with data
+end
+
+</code></pre>
+
 <h2 id="functions">Functions</h2>
 <table>
 <thead>
@@ -241,18 +272,13 @@
 <tbody>
 <tr>
 <td>void</td>
-<td>Fire(...)</td>
-<td>Fires the event, passing through all of the arguments.</td>
+<td>ToInstance(Instance location,dictionary data)</td>
+<td>Converts the specified data into a tree of <code>ValueObject</code> instances.</td>
 </tr>
 <tr>
-<td>EventConnection</td>
-<td>Connect(function functionToFire)</td>
-<td>Creates a connection between the given function and the event.</td>
-</tr>
-<tr>
-<td>void</td>
-<td>Wait()</td>
-<td>Yields until the event is fired. Does not return any arguments.</td>
+<td>dictionary</td>
+<td>ToDictionary(Instance location)</td>
+<td>Converts the specified location into a dictionary for storage.</td>
 </tr>
 </tbody>
 </table>
@@ -263,10 +289,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../eventConnection/" class="btn btn-neutral float-right" title="EventConnection">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../defaultify/" class="btn btn-neutral float-right" title="Defaultify">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../errors/" class="btn btn-neutral" title="Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -292,10 +318,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../errors/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../eventConnection/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../defaultify/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

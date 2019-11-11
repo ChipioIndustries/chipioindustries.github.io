@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Event - Framework Docs</title>
+  <title>Menu - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Event";
-    var mkdocs_page_input_path = "api\\event.md";
+    var mkdocs_page_name = "Menu";
+    var mkdocs_page_input_path = "api\\menu.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -73,18 +73,9 @@
                     
     <a class="" href="../errors/">Errors</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Event</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#constructor">Constructor</a></li>
-    
-
-    <li class="toctree-l3"><a href="#functions">Functions</a></li>
-    
-
-    </ul>
+    <a class="" href="../event/">Event</a>
                 </li>
                 <li class="">
                     
@@ -118,9 +109,24 @@
                     
     <a class="" href="../leakyBucket/">LeakyBucket</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../menu/">Menu</a>
+    <a class="current" href="./">Menu</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#constructor">Constructor</a></li>
+    
+
+    <li class="toctree-l3"><a href="#properties">Properties</a></li>
+    
+
+    <li class="toctree-l3"><a href="#functions">Functions</a></li>
+    
+
+    <li class="toctree-l3"><a href="#events">Events</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -201,7 +207,7 @@
         
       
     
-    <li>Event</li>
+    <li>Menu</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -211,7 +217,7 @@
           <div role="main">
             <div class="section">
               
-                <p>An <code>Event</code> is an object used to allow scripts to detect specific changes (or, for lack of a better word, events) between each other.</p>
+                <p>A <code>Menu</code> is a simple object for managing a <code>LayerCollector</code>/<code>GuiObject</code>'s visibility and passing through arguments.</p>
 <h2 id="constructor">Constructor</h2>
 <table>
 <thead>
@@ -223,9 +229,26 @@
 </thead>
 <tbody>
 <tr>
-<td>Event</td>
-<td>Event.new()</td>
-<td>Creates a new event object.</td>
+<td>Menu</td>
+<td>Menu.new(GuiObject/LayerCollector gui)</td>
+<td>Creates a new menu object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LayerCollector\GuiObject</td>
+<td>GuiObject</td>
+<td>The item being controlled by the Menu.</td>
 </tr>
 </tbody>
 </table>
@@ -241,18 +264,23 @@
 <tbody>
 <tr>
 <td>void</td>
-<td>Fire(...)</td>
-<td>Fires the event, passing through all of the arguments.</td>
+<td>SetVisibility(bool to,...)</td>
+<td>Changes the item's visibility, passing through any extra arguments to the event.</td>
 </tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<table>
+<thead>
 <tr>
-<td>EventConnection</td>
-<td>Connect(function functionToFire)</td>
-<td>Creates a connection between the given function and the event.</td>
+<th>Event</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>void</td>
-<td>Wait()</td>
-<td>Yields until the event is fired. Does not return any arguments.</td>
+<td>VisibilityChanged(bool to,...)</td>
+<td>Fires when the item's visibility has been called to change, passing through any extra arguments.</td>
 </tr>
 </tbody>
 </table>
@@ -263,10 +291,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../eventConnection/" class="btn btn-neutral float-right" title="EventConnection">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../menuController/" class="btn btn-neutral float-right" title="MenuController">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../errors/" class="btn btn-neutral" title="Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../leakyBucket/" class="btn btn-neutral" title="LeakyBucket"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -292,10 +320,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../errors/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../leakyBucket/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../eventConnection/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../menuController/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

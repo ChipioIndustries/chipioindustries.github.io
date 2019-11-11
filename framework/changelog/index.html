@@ -59,6 +59,14 @@
     <ul class="subnav">
                 <li class="">
                     
+    <a class="" href="../api/dataRenderer/">DataRenderer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/defaultify/">Defaultify</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/enum/">Enum</a>
                 </li>
                 <li class="">
@@ -103,6 +111,14 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../api/menu/">Menu</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/menuController/">MenuController</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/prettyNumber/">PrettyNumber</a>
                 </li>
                 <li class="">
@@ -131,6 +147,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../api/setInterfaceVisible/">SetInterfaceVisible</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/waitForPath/">WaitForPath</a>
                 </li>
     </ul>
@@ -141,6 +161,9 @@
     <a class="current" href="./">Changelog</a>
     <ul class="subnav">
             
+    <li class="toctree-l2"><a href="#11102019-v3-more-reliability-gui-and-data-functions">11/10/2019 // v3 // More Reliability, GUI and Data Functions</a></li>
+    
+
     <li class="toctree-l2"><a href="#1182019-v2-custom-enums-and-small-updates">11/8/2019 // v2 // Custom Enums and Small Updates</a></li>
     
 
@@ -187,7 +210,17 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="1182019-v2-custom-enums-and-small-updates">11/8/2019 // v2 // Custom Enums and Small Updates</h3>
+                <h3 id="11102019-v3-more-reliability-gui-and-data-functions">11/10/2019 // v3 // More Reliability, GUI and Data Functions</h3>
+<ul>
+<li>New <code>shared.Ready</code> property to notify scripts of when <code>shared()</code> is ready to be called.</li>
+<li>Ideal activation within a script has been changed to wait until <code>shared()</code> is ready to be called by looking for <code>shared.Ready</code>.</li>
+<li>New <a href="../api/setInterfaceVisible/"><code>SetInterfaceVisible</code> module</a> allows for easy setting of a GUI's visibility.</li>
+<li>New <a href="../api/dataRenderer/"><code>DataRenderer</code> module</a> intelligently converts dictionaries to instances and back. Ideal for player data structures.</li>
+<li>New <a href="../api/defaultify/"><code>Defaultify</code> module</a> applies any specified default values to a specified dictionary.</li>
+<li>New <a href="../api/menu/"><code>Menu</code> module</a> allows for easy toggling of a <code>GuiObject</code>/<code>LayerCollector</code>, along with the ability to pass through arguments.</li>
+<li>New <a href="../api/menuController/"><code>MenuController</code> module</a> handles registering and toggling of <code>Menu</code>s, only allowing one to be visible at a a time and passing through arguments.</li>
+</ul>
+<h3 id="1182019-v2-custom-enums-and-small-updates">11/8/2019 // v2 // Custom Enums and Small Updates</h3>
 <ul>
 <li><a href="../api/enum/"><code>Enum</code> module</a> allows for custom enums.</li>
 <li><code>Remote</code> module now uses a <code>CollectionService</code> based system instead of being limited to direct children of a specific folder.</li>
