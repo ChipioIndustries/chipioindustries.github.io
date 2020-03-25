@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Remote - Framework Docs</title>
+  <title>BetterSetCore - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Remote";
-    var mkdocs_page_input_path = "api\\remote.md";
+    var mkdocs_page_name = "BetterSetCore";
+    var mkdocs_page_input_path = "api\\betterSetCore.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -57,9 +57,21 @@
 		
     <span class="caption-text">API</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../betterSetCore/">BetterSetCore</a>
+    <a class="current" href="./">BetterSetCore</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#example">Example</a></li>
+    
+
+    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
+    
+
+    <li class="toctree-l3"><a href="#returns">Returns</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -141,21 +153,9 @@
                     
     <a class="" href="../promotedAccounts/">PromotedAccounts</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Remote</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#example">Example</a></li>
-    
-
-    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
-    
-
-    <li class="toctree-l3"><a href="#returns">Returns</a></li>
-    
-
-    </ul>
+    <a class="" href="../remote/">Remote</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +220,7 @@
         
       
     
-    <li>Remote</li>
+    <li>BetterSetCore</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -230,9 +230,9 @@
           <div role="main">
             <div class="section">
               
-                <p><code>Remote</code> is a function used to easily get a remote by the specified name. The script automatically detects all remotes by finding instances with a specific tag (by default, "Remote", but can be changed within the script). The framework has a specific organization for remotes where a "remote" is actually a folder with the remote name containing any combination of the four remote types (<code>BindableFunction</code>, <code>BindableEvent</code>, <code>RemoteFunction</code>, <code>RemoteEvent</code>).</p>
+                <p><code>BetterSetCore</code> is a function that will consistently retry <code>SetCore</code> calls until the method has been registered by the core scripts and the call can go through. If a successful call is unable to be made, a warning with a reason and stack trace will be printed to the output, and the reason will be returned instead of the expected result.</p>
 <h2 id="example">Example</h2>
-<pre><code class="lua">local myRemote=Remote(&quot;MyRemote&quot;) --returns the folder by the name of &quot;MyRemote&quot;
+<pre><code class="lua">BetterSetCore(&quot;ResetButtonCallback&quot;,false) --disables the reset button, no need to wrap in a callback.
 </code></pre>
 
 <h2 id="parameters">Parameters</h2>
@@ -247,8 +247,18 @@
 <tbody>
 <tr>
 <td>string</td>
-<td>remoteName</td>
-<td>The name of the remote to return.</td>
+<td>parameterName</td>
+<td>The name of the parameter to set.</td>
+</tr>
+<tr>
+<td>Variant</td>
+<td>value</td>
+<td>The value to set the parameter to.</td>
+</tr>
+<tr>
+<td>int</td>
+<td>[retryDurationLimit=20]</td>
+<td>The maximum length of time a call can be retried for.</td>
 </tr>
 </tbody>
 </table>
@@ -262,8 +272,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Instance</td>
-<td>The remote with the specified name, or nil if there is no remote by that name.</td>
+<td>Variant</td>
+<td>The result of the <code>SetCore</code> call, or an error if the call was never successful.</td>
 </tr>
 </tbody>
 </table>
@@ -274,10 +284,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../require/" class="btn btn-neutral float-right" title="Require">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../dataRenderer/" class="btn btn-neutral float-right" title="DataRenderer">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../promotedAccounts/" class="btn btn-neutral" title="PromotedAccounts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -303,10 +313,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../promotedAccounts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../require/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../dataRenderer/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

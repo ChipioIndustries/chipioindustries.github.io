@@ -59,7 +59,15 @@
     <ul class="subnav">
                 <li class="">
                     
+    <a class="" href="../betterSetCore/">BetterSetCore</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../dataRenderer/">DataRenderer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../deepCopy/">DeepCopy</a>
                 </li>
                 <li class="">
                     
@@ -105,6 +113,10 @@
                 <li class="">
                     
     <a class="" href="../getClosest/">GetClosest</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../getPlayersInRegion3/">GetPlayersInRegion3</a>
                 </li>
                 <li class="">
                     
@@ -160,6 +172,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../tags/">Tags</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../waitForPath/">WaitForPath</a>
                 </li>
     </ul>
@@ -212,6 +228,10 @@
             <div class="section">
               
                 <p>The framework automatically appends custom enums to the <code>Enum</code> global. To add a custom enum, simply open the <code>Enum</code> module and add enums to the <code>enum</code> table. At the moment, there are no default custom enums.</p>
+<p><strong>Warning:</strong> Due to Roblox behavior, EnumItems cannot be compared properly when sent across the network. Resort to comparing their <code>Value</code> properties instead:</p>
+<pre><code class="lua">serverEnum.Value==clientEnum.Value
+</code></pre>
+
 <h2 id="example">Example</h2>
 <pre><code class="lua">enum.Example={
     Test={

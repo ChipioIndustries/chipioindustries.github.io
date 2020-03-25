@@ -59,7 +59,15 @@
     <ul class="subnav">
                 <li class="">
                     
+    <a class="" href="../api/betterSetCore/">BetterSetCore</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/dataRenderer/">DataRenderer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/deepCopy/">DeepCopy</a>
                 </li>
                 <li class="">
                     
@@ -96,6 +104,10 @@
                 <li class="">
                     
     <a class="" href="../api/getClosest/">GetClosest</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/getPlayersInRegion3/">GetPlayersInRegion3</a>
                 </li>
                 <li class="">
                     
@@ -151,6 +163,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../api/tags/">Tags</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../api/waitForPath/">WaitForPath</a>
                 </li>
     </ul>
@@ -161,6 +177,15 @@
     <a class="current" href="./">Changelog</a>
     <ul class="subnav">
             
+    <li class="toctree-l2"><a href="#3252020-v6-bettersetcore-and-deepcopy">3/25/2020 // v6 // BetterSetCore and DeepCopy</a></li>
+    
+
+    <li class="toctree-l2"><a href="#11232019-v5-getplayersinregion3-fix">11/23/2019 // v5 // GetPlayersInRegion3 Fix</a></li>
+    
+
+    <li class="toctree-l2"><a href="#11212019-v4-waitforpath-fix-and-getplayersinregion3">11/21/2019 // v4 // WaitForPath Fix and GetPlayersInRegion3</a></li>
+    
+
     <li class="toctree-l2"><a href="#11102019-v3-more-reliability-gui-and-data-functions">11/10/2019 // v3 // More Reliability, GUI and Data Functions</a></li>
     
 
@@ -210,7 +235,22 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="11102019-v3-more-reliability-gui-and-data-functions">11/10/2019 // v3 // More Reliability, GUI and Data Functions</h3>
+                <h3 id="3252020-v6-bettersetcore-and-deepcopy">3/25/2020 // v6 // BetterSetCore and DeepCopy</h3>
+<ul>
+<li>New <a href="../api/betterSetCore/"><code>BetterSetCore</code></a> and <a href="../api/deepCopy/"><code>DeepCopy</code></a> functions available!</li>
+</ul>
+<h3 id="11232019-v5-getplayersinregion3-fix">11/23/2019 // v5 // GetPlayersInRegion3 Fix</h3>
+<ul>
+<li>I thought <code>tableName:insert(value)</code> worked as well as <code>table.insert(tableName,value)</code>. I was wrong, and now <code>GetPlayersInRegion3</code> should work properly.</li>
+<li>Added <a href="../api/tags/"><code>Tags</code></a> module.</li>
+</ul>
+<h3 id="11212019-v4-waitforpath-fix-and-getplayersinregion3">11/21/2019 // v4 // WaitForPath Fix and GetPlayersInRegion3</h3>
+<ul>
+<li>Fixed major <code>WaitForPath</code> bug that would error if no optional <code>maxWait</code> parameter was provided.</li>
+<li>New <a href="../api/getPlayersInRegion3/"><code>GetPlayersInRegion3</code> module</a> for easily and efficiently getting players in a certain region.</li>
+<li>Fixed issue where Enums couldn't be compared properly. Comparisons across the network still don't work properly.</li>
+</ul>
+<h3 id="11102019-v3-more-reliability-gui-and-data-functions">11/10/2019 // v3 // More Reliability, GUI and Data Functions</h3>
 <ul>
 <li>New <code>shared.Ready</code> property to notify scripts of when <code>shared()</code> is ready to be called.</li>
 <li>Ideal activation within a script has been changed to wait until <code>shared()</code> is ready to be called by looking for <code>shared.Ready</code>.</li>

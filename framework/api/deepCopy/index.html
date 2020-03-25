@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Remote - Framework Docs</title>
+  <title>DeepCopy - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Remote";
-    var mkdocs_page_input_path = "api\\remote.md";
+    var mkdocs_page_name = "DeepCopy";
+    var mkdocs_page_input_path = "api\\deepCopy.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -65,9 +65,21 @@
                     
     <a class="" href="../dataRenderer/">DataRenderer</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../deepCopy/">DeepCopy</a>
+    <a class="current" href="./">DeepCopy</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#example">Example</a></li>
+    
+
+    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
+    
+
+    <li class="toctree-l3"><a href="#returns">Returns</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -141,21 +153,9 @@
                     
     <a class="" href="../promotedAccounts/">PromotedAccounts</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Remote</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#example">Example</a></li>
-    
-
-    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
-    
-
-    <li class="toctree-l3"><a href="#returns">Returns</a></li>
-    
-
-    </ul>
+    <a class="" href="../remote/">Remote</a>
                 </li>
                 <li class="">
                     
@@ -220,7 +220,7 @@
         
       
     
-    <li>Remote</li>
+    <li>DeepCopy</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -230,9 +230,14 @@
           <div role="main">
             <div class="section">
               
-                <p><code>Remote</code> is a function used to easily get a remote by the specified name. The script automatically detects all remotes by finding instances with a specific tag (by default, "Remote", but can be changed within the script). The framework has a specific organization for remotes where a "remote" is actually a folder with the remote name containing any combination of the four remote types (<code>BindableFunction</code>, <code>BindableEvent</code>, <code>RemoteFunction</code>, <code>RemoteEvent</code>).</p>
+                <p><code>DeepCopy</code> is a function that will duplicate the provided table/dictionary. Stolen from the <a href="https://developer.roblox.com/en-us/articles/Cloning-tables"><code>devhub</code></a>.</p>
 <h2 id="example">Example</h2>
-<pre><code class="lua">local myRemote=Remote(&quot;MyRemote&quot;) --returns the folder by the name of &quot;MyRemote&quot;
+<pre><code class="lua">local myTable={
+    &quot;there is no escape&quot;
+}
+local myTableCopy=DeepCopy(myTable)
+myTableCopy[1]=&quot;there is an escape&quot;
+print(myTable[1]) --prints &quot;there is no escape&quot;
 </code></pre>
 
 <h2 id="parameters">Parameters</h2>
@@ -246,9 +251,9 @@
 </thead>
 <tbody>
 <tr>
-<td>string</td>
-<td>remoteName</td>
-<td>The name of the remote to return.</td>
+<td>table/dictionary</td>
+<td>table</td>
+<td>The table to copy.</td>
 </tr>
 </tbody>
 </table>
@@ -262,8 +267,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Instance</td>
-<td>The remote with the specified name, or nil if there is no remote by that name.</td>
+<td>table/dictionary</td>
+<td>A copy of the provided table.</td>
 </tr>
 </tbody>
 </table>
@@ -274,10 +279,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../require/" class="btn btn-neutral float-right" title="Require">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../defaultify/" class="btn btn-neutral float-right" title="Defaultify">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../promotedAccounts/" class="btn btn-neutral" title="PromotedAccounts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dataRenderer/" class="btn btn-neutral" title="DataRenderer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -303,10 +308,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../promotedAccounts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../dataRenderer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../require/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../defaultify/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

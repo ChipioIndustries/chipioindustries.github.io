@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Remote - Framework Docs</title>
+  <title>Tags - Framework Docs</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Remote";
-    var mkdocs_page_input_path = "api\\remote.md";
+    var mkdocs_page_name = "Tags";
+    var mkdocs_page_input_path = "api\\tags.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -141,21 +141,9 @@
                     
     <a class="" href="../promotedAccounts/">PromotedAccounts</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">Remote</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#example">Example</a></li>
-    
-
-    <li class="toctree-l3"><a href="#parameters">Parameters</a></li>
-    
-
-    <li class="toctree-l3"><a href="#returns">Returns</a></li>
-    
-
-    </ul>
+    <a class="" href="../remote/">Remote</a>
                 </li>
                 <li class="">
                     
@@ -173,9 +161,15 @@
                     
     <a class="" href="../setInterfaceVisible/">SetInterfaceVisible</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../tags/">Tags</a>
+    <a class="current" href="./">Tags</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#example">Example</a></li>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -220,7 +214,7 @@
         
       
     
-    <li>Remote</li>
+    <li>Tags</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -230,43 +224,12 @@
           <div role="main">
             <div class="section">
               
-                <p><code>Remote</code> is a function used to easily get a remote by the specified name. The script automatically detects all remotes by finding instances with a specific tag (by default, "Remote", but can be changed within the script). The framework has a specific organization for remotes where a "remote" is actually a folder with the remote name containing any combination of the four remote types (<code>BindableFunction</code>, <code>BindableEvent</code>, <code>RemoteFunction</code>, <code>RemoteEvent</code>).</p>
+                <p>Used purely to keep a list of CollectionService tags. Since entries are constants, the names should be capitalized and words should be separated with underscores, i.e. <code>TAG_NAME</code>.</p>
 <h2 id="example">Example</h2>
-<pre><code class="lua">local myRemote=Remote(&quot;MyRemote&quot;) --returns the folder by the name of &quot;MyRemote&quot;
+<pre><code class="lua">Tags={
+    VISUAL_MARKER=&quot;MARKER_PART&quot;
+}
 </code></pre>
-
-<h2 id="parameters">Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>string</td>
-<td>remoteName</td>
-<td>The name of the remote to return.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="returns">Returns</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Instance</td>
-<td>The remote with the specified name, or nil if there is no remote by that name.</td>
-</tr>
-</tbody>
-</table>
               
             </div>
           </div>
@@ -274,10 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../require/" class="btn btn-neutral float-right" title="Require">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../waitForPath/" class="btn btn-neutral float-right" title="WaitForPath">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../promotedAccounts/" class="btn btn-neutral" title="PromotedAccounts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setInterfaceVisible/" class="btn btn-neutral" title="SetInterfaceVisible"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -303,10 +266,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../promotedAccounts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../setInterfaceVisible/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../require/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../waitForPath/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
