@@ -81,6 +81,12 @@
     <li class="toctree-l3"><a href="#example">Example</a></li>
     
 
+    <li class="toctree-l3"><a href="#legacy-enums">Legacy Enums</a></li>
+    
+
+    <li class="toctree-l3"><a href="#example_1">Example</a></li>
+    
+
     <li class="toctree-l3"><a href="#enumitem-format">EnumItem Format</a></li>
     
 
@@ -228,11 +234,23 @@
             <div class="section">
               
                 <p>The framework automatically appends custom enums to the <code>Enum</code> global. To add a custom enum, simply open the <code>Enum</code> module and add enums to the <code>enum</code> table. At the moment, there are no default custom enums.</p>
+<p>The actual value of each EnumItem isn't especially important if you only plan on comparing enums of the same type against each other. They could be pretty much anything--a common practice is to simply use the name of the EnumItem as a string.</p>
+<h2 id="example">Example</h2>
+<pre><code class="lua">enum.Example={
+    Left=&quot;Left&quot;;
+    Right=&quot;Right&quot;;
+    Center=&quot;Center&quot;;
+}
+</code></pre>
+
+<hr />
+<h2 id="legacy-enums">Legacy Enums</h2>
+<p>The following documentation is only relevant to developers using the metatable-based Enum system prior to v7. This version used an <code>__eq</code> metamethod to enable EnumItems to contain <code>Name</code> and <code>Value</code> properties as tables and still be compared. This version was removed in favor of a simplified system due to insurmountable limitations of comparing enums across the network boundary.</p>
 <p><strong>Warning:</strong> Due to Roblox behavior, EnumItems cannot be compared properly when sent across the network. Resort to comparing their <code>Value</code> properties instead:</p>
 <pre><code class="lua">serverEnum.Value==clientEnum.Value
 </code></pre>
 
-<h2 id="example">Example</h2>
+<h2 id="example_1">Example</h2>
 <pre><code class="lua">enum.Example={
     Test={
         Name=&quot;Test&quot;;
